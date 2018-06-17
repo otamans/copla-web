@@ -1,11 +1,12 @@
-from .models import Category, Service, Plan, Work
 from rest_framework import serializers
+
+from .models import Category, Service, Plan, Work
 
 
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ('name', 'description', 'category', 'photo', 'date', 'provide', 'plan', 'owner', 'time_coins')
+        fields = ('id', 'name', 'description', 'category', 'photo', 'date', 'provide', 'plan', 'owner', 'time_coins')
 
 
 class CategorySerializer(serializers.ModelSerializer):
