@@ -33,12 +33,16 @@ class Service(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='services')
-    photo = models.ImageField()
+    photo = models.ImageField(blank=True)
     date = models.DateTimeField()
     provide = models.CharField(choices=SERVICE_TYPE, max_length=25, default='sell')
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name='plans')
     city = models.CharField(max_length=64, blank=True, null=True)
     country = models.CharField(max_length=64, blank=True, null=True)
+
+
+    def __str__(self):
+        return self.name
 
 
 STATUS_CHOICES = (
