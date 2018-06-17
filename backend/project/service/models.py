@@ -1,11 +1,6 @@
 from django.db import models
 
-
-STATUS = (
-    (1, 'На выполнении'),
-    (2, 'Выполнена'),
-    (3, 'Отменена'),
-)
+from project.mauth.models import Profile
 
 
 class Plan(models.Model):
@@ -22,6 +17,7 @@ class Category(models.Model):
 
 
 class Service(models.Model):
+    owner = models.ForeignKey(Profile, related_name='services', on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='services')
@@ -31,3 +27,16 @@ class Service(models.Model):
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name='plans')
     city = models.CharField(max_length=64, blank=True, null=True)
     country = models.CharField(max_length=64, blank=True, null=True)
+
+
+
+STATUS_CHOICES = (
+    ('open', 'OPEN'),
+    ('closed', 'CLOSED'),
+)
+
+class Work(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, default='open')
+    worker = models.ManyToManyField(Profile)
+    status = models.CharField(choices=STATUS_CHOICES, max_length=8)
+    feedback = models.TextField()
