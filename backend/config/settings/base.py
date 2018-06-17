@@ -35,7 +35,7 @@ SECRET_KEY = '7nkk3py_tar=gzyaqpuy7!)u3_a-+=qn6pgk#9a_yo7_s&(f*s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['864de450.ngrok.io']
+ALLOWED_HOSTS = ['864de450.ngrok.io', '127.0.0.1']
 
 # Application definition
 
