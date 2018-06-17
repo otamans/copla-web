@@ -19,7 +19,7 @@ class Service(models.Model):
     photo = models.ImageField()
     date = models.DateTimeField()
     provide = models.BooleanField()
-
+    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name='plans')
     city = models.CharField(max_length=64)
     country = models.CharField(max_length=64)
 
