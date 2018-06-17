@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework_jwt.serializers import User
 
 from project.mauth.models import Profile
+from project.service.serializers import ServiceSerializer
 
 
 class MyUserSerializer(serializers.ModelSerializer):
@@ -18,7 +19,8 @@ class MyUserSerializer(serializers.ModelSerializer):
 
 class ProfileSerializer(serializers.ModelSerializer):
     user_name = serializers.CharField(read_only=True, source="user.username")
+    services = ServiceSerializer(many=True, read_only=True)
 
     class Meta:
         model = Profile
-        fields = ('id', 'phone', 'point_amount', 'user_name', 'first_name', 'last_name', 'email', 'photo')
+        fields = ('id', 'phone', 'point_amount', 'user_name', 'first_name', 'last_name', 'email', 'photo', 'services')
