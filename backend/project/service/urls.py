@@ -6,6 +6,7 @@ router = routers.DefaultRouter()
 router.register(r'category', views.CategoryViewSet)
 router.register(r'service', views.ServiceViewSet)
 
+
 urlpatterns = [
     url(r'^', include(router.urls)),
 ]
