@@ -40,7 +40,6 @@ class Service(models.Model):
     city = models.CharField(max_length=64, blank=True, null=True)
     country = models.CharField(max_length=64, blank=True, null=True)
 
-
     def __str__(self):
         return self.name
 
