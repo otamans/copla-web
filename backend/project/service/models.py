@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import F
 
 from project.mauth.models import Profile
 
@@ -53,6 +54,19 @@ STATUS_CHOICES = (
 
 class Work(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, default='open')
-    worker = models.ManyToManyField(Profile)
+    worker = models.ForeignKey(Profile, on_delete=models.CASCADE)
     status = models.CharField(choices=STATUS_CHOICES, max_length=8)
     feedback = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.service.name
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if self.status == 'closed':
+            work_price = self.service.time_coins
+            self.service.owner.point_amount = F('point_amount') - work_price
+            self.worker.point_amount = F('point_amount') + work_price
+            self.service.owner.save()
+            self.worker.save()
+        super(Work, self).save()

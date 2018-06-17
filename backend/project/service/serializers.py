@@ -24,7 +24,7 @@ class PlanSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description', 'services')
 
 
-class WorkerSerializer(serializers.ModelSerializer):
+class WorkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Work
-        fields = '__all__'
+        fields = ('id', 'service', 'worker', 'status', 'feedback')
