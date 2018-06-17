@@ -39,6 +39,7 @@ class Service(models.Model):
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name='plans')
     city = models.CharField(max_length=64, blank=True, null=True)
     country = models.CharField(max_length=64, blank=True, null=True)
+    time_coins = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name
@@ -54,4 +55,4 @@ class Work(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, default='open')
     worker = models.ManyToManyField(Profile)
     status = models.CharField(choices=STATUS_CHOICES, max_length=8)
-    feedback = models.TextField()
+    feedback = models.TextField(blank=True)

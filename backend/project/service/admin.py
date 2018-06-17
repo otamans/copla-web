@@ -1,8 +1,6 @@
-from profile import Profile
-
 from django.contrib import admin
 
-from .models import Category, Service, Plan
+from .models import Category, Service, Plan, Work
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -20,11 +18,12 @@ class PlanAdmin(admin.ModelAdmin):
         model = Plan
 
 
-class ProfileAdmin(admin.ModelAdmin):
+class WorkAdmin(admin.ModelAdmin):
     class Meta:
-        model = Profile
+        model = Work
 
 
+admin.site.register(Work, WorkAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Plan, PlanAdmin)

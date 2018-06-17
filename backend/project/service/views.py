@@ -1,6 +1,6 @@
-from .models import Category, Service, Plan
+from .models import Category, Service, Plan, Work
 from rest_framework import viewsets
-from .serializers import CategorySerializer, ServiceSerializer, PlanSerializer
+from .serializers import CategorySerializer, ServiceSerializer, PlanSerializer, WorkerSerializer
 
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
@@ -16,3 +16,8 @@ class ServiceViewSet(viewsets.ModelViewSet):
 class PlanViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Plan.objects.all()
     serializer_class = PlanSerializer
+
+
+class WorkViewSet(viewsets.ModelViewSet):
+    queryset = Work.objects.all()
+    serializer_class = WorkerSerializer
