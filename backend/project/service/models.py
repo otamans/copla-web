@@ -8,6 +8,12 @@ STATUS = (
 )
 
 
+class Plan(models.Model):
+    name = models.CharField(max_length=128)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+
+
 class Category(models.Model):
     name = models.CharField(max_length=128)
 
@@ -20,11 +26,5 @@ class Service(models.Model):
     date = models.DateTimeField()
     provide = models.BooleanField()
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name='plans')
-    city = models.CharField(max_length=64)
-    country = models.CharField(max_length=64)
-
-
-class Plan(models.Model):
-    name = models.CharField(max_length=128)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    city = models.CharField(max_length=64, blank=True, null=True)
+    country = models.CharField(max_length=64, blank=True, null=True)
