@@ -40,7 +40,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_APPS  = (
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,11 +50,13 @@ DJANGO_APPS  = (
 )
 
 THIRD_PARTY_APPS = (
+    'rest_framework',
 )
 
 
 LOCAL_APPS = (
     'project.mauth',
+    'project.service'
 )
 
 
