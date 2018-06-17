@@ -5,7 +5,7 @@ from rest_framework import serializers
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ('name', 'description', 'category', 'photo', 'date', 'provide')
+        fields = ('name', 'description', 'category', 'photo', 'date', 'provide', 'plan')
 
 
 class CategorySerializer(serializers.ModelSerializer):
