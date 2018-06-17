@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'OpenSans-Regular';
+		src: url(../fonts/OpenSans-Regular.ttf) format('truetype'), /* IE9 Compat Modes */
+		 url(../fonts/OpenSans-Regular.eot?#iefix) format('embedded-opentype'), /* IE6-IE8 */
+        	url(../fonts/OpenSans-Regular.woff2) format('woff2'), /* Super Modern Browsers */
+        	url(../fonts/OpenSans.woff) format('woff'), /* Pretty Modern Browsers */
+        	url(../fonts/OpenSans.svg#svgFontName) format('svg'); /* Legacy iOS */
+}
+
+html,body {
+	min-height: 100vh;
+}
+
+body {
+	font-family: OpenSans-Regular;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+header {
+	position: relative;
+	height: 120px;
+	width: 100%;
+}
+
+hr {
+    margin: 0;
+    max-width: 100%;
+}
+
+header .menu {
+	padding-top: 1%;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    float: right;
+    align-items: center;
+}
+
+header .row, footer .row {
+	max-width: 1280px;
+	position: relative;
+	height: 100%;
+}
+
+footer {
+/*	margin-top: 150px;*/
+	height: 120px;
+	width: 100%;
+	background: #000;
+}
+
+header .logo, footer .logo, footer .team{
+	height: 75%;
+    position: relative;
+}
+
+header .logo img, footer .logo img{
+    width: auto;
+    height: 75%;
+    position: absolute;
+    top: 20%;
+    left: 2.5rem;
+}
+
+footer .team .team-block{
+    width: auto;
+    height: 75%;
+    top: 20%;
+    right: 0;
+}
+
+footer .team {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+footer .team h5 {
+	color: #fff;
+	margin-bottom: 0;
+}
+
+header .menu{
+	color: #C7C7C7;
+}
+
+header .menu .menu-item:hover {
+	color: #09A9FF;
+	cursor: pointer;
+}
+
+body.log-in_page {
+	background: url(../img/login-back.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body.add-service_page .main .content {
+	margin-top: 50px;
+}
+
+.main {
+	max-width: 1280px;
+	min-width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.position-left {
+	top: auto;
+	left: auto;
+}
+
+.left-sidebar {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.search-box {
+	position: relative;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.search-field{
+	border-radius: 45px;
+	padding-left: 20px;
+	height: 35px;
+	font-size: 1.2rem;
+}
+
+.filter-box {
+	padding-left: 10px;
+	margin-top: 40px;
+	position: relative;
+}
+
+.filter-box h4{
+	font-weight: 700;
+	font-size: 1.2rem;
+	margin-bottom: 0;
+}
+
+.filter-box p:first-of-type{
+	margin-top: 15px;
+}
+
+.filter-box a {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.filter-box a:hover .name {
+	color: #09A9FF;
+	cursor: pointer;
+}
+
+.filter-box .name {
+	color: #9B9B9B;
+}
+
+.filter-box .count {
+	color: #C7C7C7;
+}
+
+.filter-box span {
+	display: flex;
+}
+
+.search-icon {
+	background-image: url(../img/Vector_search_icon.png);
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 5px;
+	right: 6px;
+}
+
+.title_block {
+	width: 100%;
+}
