@@ -54,12 +54,10 @@ THIRD_PARTY_APPS = (
     'rest_framework_swagger',
 )
 
-
 LOCAL_APPS = (
     'project.mauth',
     'project.service'
 )
-
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -95,7 +93,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -105,9 +102,6 @@ DATABASES = {
         'NAME': str(ROOT_DIR.path('db.sqlite3')),
     }
 }
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -135,7 +129,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -148,7 +141,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
