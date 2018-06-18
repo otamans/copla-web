@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazy Load</title>
+    <title>Copla</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <style src="css/style.css"></style>
@@ -12,27 +12,26 @@
   <body class="add-service_page">
 
     <header>
-
       <div class="row">
-        <div class="logo large-3 columns">
+        <div class="logo large-3 medium-6 small-12 columns">
           <img width="489" height="335" src="img/logo.png">
         </div>
-        <div class="large-9 columns">
+        <div class="large-9 medium-6 small-12 columns">
           <div class="menu">
-            <span class="menu-item">+Добавить</span>
-            <span class="menu-item">Услуги</span>
-            <span class="menu-item">О Проекте</span>
-            <span class="menu-item">Андрей Степанов</span>
-            <span class="menu-item">Выйти</span>
+            <a class="menu-item add-service">+Добавить</a>
+            <a class="menu-item services">Услуги</a>
+            <a class="menu-item about">О проекте</a>
+            <a class="menu-item user-name">Андрей Степанов</a>
+            <a class="menu-item log-out">Выйти</a>
+            <a class="menu-item log-in">Войти</a>
           </div>
         </div>
       </div>
-      
     </header>
 
     <div class="main row">
       <div class="title_block">
-        <h1 class="page_title">Добавление услуги</h1>
+        <h5 class="page_title">Добавление услуги</h5>
         <hr>
       </div>
 
@@ -40,24 +39,28 @@
         <form method="POST" class="add-service_form">
           <input type="text" name="service-name" required="required">
           <div class="choose-radio">
-            <div class="radio-box">
-              <input type="radio" name="get-service">
-              <label class="radio-alt">Получить</label>
-            </div>
-            <div class="radio-box">
-              <input type="radio" name="provide-service" checked="checked">
-              <label class="radio-alt">Предоставить</label>
+            <div class="radio-box row">
+              <div class="large-6 columns">
+                <input type="radio" id="service-get" name="service-get-provide" />
+                <label for="service-get"><span></span>Получить</label>
+              </div>
+              <div class="large-6 columns">
+                <input type="radio" id="service-provide" name="service-get-provide" checked="checked" />
+                <label for="service-provide"><span></span>Предоставить</label>
+              </div>
             </div>
           </div>
           <input type="text" name="service-category" required="required">
           <div class="choose-radio">
-            <div class="radio-box">
-              <input type="radio" name="once-service">
-              <label class="radio-alt">Одноразовая</label>
-            </div>
-            <div class="radio-box">
-              <input type="radio" name="multiple-service" checked="checked">
-              <label class="radio-alt">Многократная</label>
+            <div class="radio-box row">
+              <div class="large-6 columns">
+                <input type="radio" id="service-once" name="service-once-multiple" />
+                <label for="service-once"><span></span>Одноразовая</label>
+              </div>
+              <div class="large-6 columns">
+                <input type="radio" id="service-multiple" name="service-once-multiple" checked="checked" />
+                <label for="service-multiple"><span></span>Многоразовая</label>
+              </div>
             </div>
           </div>
           <input type="text" name="service-points" placeholder="Поинты (необязательно)">
@@ -66,10 +69,12 @@
             <option>Закрепленное</option>
             <option>Рекламное</option>
           </select>
-          <input type="text" name="service-thumbnail-name" placeholder="Изображение" required="required">
-          <input type="file" name="service-thumbnail" accept="image/*,image/jpeg,image/png,image/jpg,image/bmp">
-          <input type="textarea" name="service-description" maxlength="64" placeholder="Максимум 64 символа">
-          <input type="submit" name="save-service">
+          <div class="image-box">
+            <strong>Выберите изображение (обязательно)</strong>
+            <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected" multiple="">
+          </div>
+          <textarea name="service-description" maxlength="64" placeholder="Максимум 64 символа"></textarea>
+          <input type="submit" name="save-service" value="Добавить">
         </form>
       </div>
         
@@ -77,22 +82,24 @@
 
     <footer>
 
-      <div class="row">
-        <div class="logo large-6 columns">
-          <img width="489" height="335" src="img/logo-white.png">
-        </div>
-        <div class="large-6 columns">
-          <div class="menu">
-            <span class="menu-item">+Добавить</span>
-            <span class="menu-item">Услуги</span>
-            <span class="menu-item">О Проекте</span>
-            <span class="menu-item">Андрей Степанов</span>
-            <span class="menu-item">Выйти</span>
+        <div class="row">
+          <div class="logo large-6 medium-6 small-12 columns">
+            <img width="489" height="335" src="img/logo-white.png">
+          </div>
+          <div class="large-6 medium-6 small-12 columns team">
+            <div class="team-block">
+              <h5>Разработано</h5>
+              <img width="170" height="54" src="img/team.png">
+            </div>
           </div>
         </div>
-      </div>
 
-    </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/app.js"></script>
+
+
+      </footer>
 
   </body>
 

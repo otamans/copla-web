@@ -12,29 +12,31 @@
 
     	<header>
     		<div class="row">
-    			<div class="logo large-3 columns">
-  	  			<img width="489" height="335" src="img/logo.png">
+    			<div class="logo large-3 medium-6 small-12 columns">
+  	  			<img width="489" height="335" src="img/logo-white.png">
   	  		</div>
-  	  		<div class="large-9 columns">
+  	  		<div class="large-9 medium-6 small-12 columns">
   	  			<div class="menu">
-  	  				<span class="menu-item">+Добавить</span>
-  	  				<span class="menu-item">Услуги</span>
-  	  				<span class="menu-item">О Проекте</span>
-  	  				<span class="menu-item">Андрей Степанов</span>
-  	  				<span class="menu-item">Выйти</span>
+  	  				<a class="menu-item add-service">+Добавить</a>
+  	  				<a class="menu-item services">Услуги</a>
+  	  				<a class="menu-item about">О проекте</a>
+  	  				<a class="menu-item user-name">Андрей Степанов</a>
+  	  				<a class="menu-item log-out">Выйти</a>
+              <a class="menu-item log-in">Войти</a>
   	  			</div>
   	  		</div>
     		</div>
-    		
     	</header>
 
       <div class="main row">
+        <div class="title"><p>Люди желающие получить и предоставить помощь всегда рядом.</p>
+          <p>Всегда здесь.</p></div>
         <div class="large-4 content">
-          <form method="POST" class="login-form" name="login-form" >
-            <input type="text" name="user-mail" required="required">
-            <input type="text" name="user-password" required="required">
-            <input type="text" name="password-confirm" required="required">
-            <input type="submit" name="login-send">
+          <form method="POST" class="login-form" name="login-form">
+            <input type="text" minlength="6" name="user-name" placeholder="Логин" required="required">
+            <input type="text" minlength="6" name="user-password" placeholder="Пароль" required="required">
+            <input type="text" minlength="6" name="password-confirm" placeholder="Подтверждение пароля" required="required">
+            <input type="submit" name="login-send" value="Регистрация">
           </form>
         </div>
       </div>
@@ -42,10 +44,10 @@
       <footer>
 
         <div class="row">
-          <div class="logo large-6 columns">
+          <div class="logo large-6 medium-6 small-12 columns">
             <img width="489" height="335" src="img/logo-white.png">
           </div>
-          <div class="large-6 columns team">
+          <div class="large-6 medium-6 small-12 columns team">
             <div class="team-block">
               <h5>Разработано</h5>
               <img width="170" height="54" src="img/team.png">
@@ -54,9 +56,11 @@
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
         <script src="js/app.js"></script>
 
 
       </footer>
 
   </body>
+</html>
